@@ -9,8 +9,25 @@ public class SaveContactController {
     private List<Contact> listOfContacts;
     private SaveContactService saveContactService;
 
-    public SaveContactController(List<Contact> listOfContacts) {
+    public SaveContactController(SaveContactService saveContactService, List<Contact> listOfContacts) {
         this.listOfContacts = listOfContacts;
+        this.saveContactService = saveContactService;
+    }
+
+    public List<Contact> getListOfContacts() {
+        return listOfContacts;
+    }
+
+    public void setListOfContacts(List<Contact> listOfContacts) {
+        this.listOfContacts = listOfContacts;
+    }
+
+    public SaveContactService getSaveContactService() {
+        return saveContactService;
+    }
+
+    public void setSaveContactService(SaveContactService saveContactService) {
+        this.saveContactService = saveContactService;
     }
 
     private boolean isValidContact(String value, int minLen){
